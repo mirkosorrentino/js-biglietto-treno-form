@@ -43,18 +43,18 @@ submitBtn.addEventListener("click", function() {
     // prezzo con massimo due cifre decimali
 
     if ((isNaN(kmToDo))||(isNaN(userAge))) {
-        document.getElementById("ticket-final-price").innerHTML+= (`ricarica la pagina e inserisci solamente dei numeri`);
+        document.getElementById("ticket-final-price").innerHTML = (`ricarica la pagina e inserisci solamente dei numeri`);
     } else if (ticketFinalPrice % 2 === 0) {
-        document.getElementById("ticket-final-price").innerHTML+= (`Il prezzo del tuo biglietto ferroviario è ${ticketFinalPrice}€`);
+        document.getElementById("ticket-final-price").innerHTML = (`Il prezzo del tuo biglietto ferroviario è ${ticketFinalPrice}€`);
     } else {
         let ticketRoundedPrice = ticketFinalPrice.toFixed(2)
-        document.getElementById("ticket-final-price").innerHTML+= ticketRoundedPrice;
+        document.getElementById("ticket-final-price").innerHTML= ticketRoundedPrice;
     }
 
     if (userAge < 18 && (!((isNaN(kmToDo))||(isNaN(userAge))))) {
-        document.getElementById("discount").innerHTML+= (`Il prezzo iniziale era di ${ticketFullPrice}€ ma hai ottenuto lo sconto under 18 del 20%`);
+        document.getElementById("discount").innerHTML = (`Il prezzo iniziale era di ${ticketFullPrice}€ ma hai ottenuto lo sconto under 18 del 20%`);
     } else if (userAge > 65 && (!((isNaN(kmToDo))||(isNaN(userAge))))) {
-        document.getElementById("discount").innerHTML+= (`Il prezzo iniziale era di ${ticketFullPrice}€ ma hai ottenuto lo sconto under 65 del 40%`);
+        document.getElementById("discount").innerHTML = (`Il prezzo iniziale era di ${ticketFullPrice}€ ma hai ottenuto lo sconto over 65 del 40%`);
     }
 
     // Clean
