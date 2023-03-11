@@ -1,0 +1,26 @@
+/* VARIABLES */
+:root {
+    --background-color: #B91450;
+    --passenger-name-color: #808080;
+}
+
+/* RESET */
+
+body {
+    background-color: var(--background-color);
+}
+
+/* BODY */
+
+.ms_border {
+    /* debug */
+    border: 1px solid red;
+}
+
+.ms_hidden {
+    display: none;
+}
+
+.ms_passenger-col {
+    background-color: var(--passenger-name-color);
+}

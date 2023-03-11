@@ -7,21 +7,73 @@
     <title>Document</title>
     <!-- custom style link -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- bootstrap link -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
 </head>
 <body>
-    <div>
-        <label for="km-to-do">Inserisci il numero di km che intendi percorrere</label>
-        <input type="number" id="km-to-do" placeholder="Scrivi solo il numero sena caratteri speciali o lettere">
+    <div class="container">
+        <h2 class="text-uppercase text-center">Calcola qui il tuo costo del tuo biglietto ferroviario</h2>
+        <div class="ms_border my-3 p-2">
+            <div class="row text-center">
+                <div class="col-4">
+                    <div>
+                        <label for="name-nurname">Nome e Cognome</label>
+                    </div>
+                    <div>
+                        <input type="text" id="name-surname">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div>
+                        <label for="km-to-do">Km da percorrere</label>
+                    </div>
+                    <div>
+                        <input type="number" id="km-to-do">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div>
+                        <label for="user-age">Fascia d'età</label>
+                    </div>
+                    <div>
+                        <input type="number" id="user-age">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button id="submit-btn">Calcola</button>
+                <button id="submit-btn">Annulla</button>
+            </div>
+        </div>
+        <h2 class="text-uppercase text-center ms_hidden" id="error"></h2>
+        <h2 class="text-uppercase text-center ms_hidden">Il tuo biglietto</h2>
+        <div class="ms_border my-3 py-2 ms_hidden">
+            <div class="row justify-content-center">
+                <div class="col-3 text-center ms_border ms_passenger-col">
+                    <div class="ms_passenger text-uppercase">Nome passengero</div>
+                    <div id="passenger-name">debug</div>
+                </div>
+                <div class="col-2 text-center ms_border">
+                    <div class="ms_offer text-uppercase">Offerta</div>
+                    <div id="offer-name">debug</div>
+                </div>
+                <div class="col-2 text-center ms_border">
+                    <div class="ms_carriage text-uppercase">Carrozza</div>
+                    <div id="carriage-name">debug</div>
+                </div>
+                <div class="col-2 text-center ms_border">
+                    <div class="ms_cp-code text-uppercase">Codice CP</div>
+                    <div id="cp-code-name">debug</div>
+                </div>
+                <div class="col-2 text-center ms_border">
+                    <div class="ms_ticket-final-price text-uppercase">Costo biglietto</div>
+                    <div id="ticket-final-price">debug</div>
+                </div>
+            </div>
+            <div id="discount">debug</div>
+        </div>
     </div>
-    <div>
-        <label for="user-age">Inserisci la tua età il giorno del viaggio</label>
-        <input type="number" id="user-age" placeholder="Scrivi solo il numero sena caratteri speciali o lettere">
-    </div>
-    <div>
-        <button id="submit-btn">Calcola</button>
-    </div>
-    <h2 id="ticket-final-price"></h2>
-    <div id="discount"></div>
     <!-- JS script -->
     <script src="js/script.js"></script>
 </body>

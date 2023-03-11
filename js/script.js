@@ -6,13 +6,16 @@ const submitBtn = document.getElementById("submit-btn");
 submitBtn.addEventListener("click", function() {
 
     // Prendere il valore dell'input
+    const nameSurnameInput = document.getElementById("name-surname");
+    const nameSurname = nameSurnameInput.value;
+
     const kmToDoInput = document.getElementById("km-to-do");
     const kmToDo = parseFloat(kmToDoInput.value);
 
     const userAgeInput = document.getElementById("user-age");
     const userAge = parseFloat(userAgeInput.value);
 
-    console.log(kmToDo, typeof(kmToDo), userAge, typeof(userAge))
+    console.log(nameSurname, typeof (nameSurname), kmToDo, typeof(kmToDo), userAge, typeof(userAge));
 
     // control
     if (isNaN(kmToDo)) {
@@ -43,9 +46,9 @@ submitBtn.addEventListener("click", function() {
     // prezzo con massimo due cifre decimali
 
     if ((isNaN(kmToDo))||(isNaN(userAge))) {
-        document.getElementById("ticket-final-price").innerHTML = (`ricarica la pagina e inserisci solamente dei numeri`);
+        document.getElementById("error").innerHTML = (`ricarica la pagina e inserisci solamente dei numeri`);
     } else if (ticketFinalPrice % 2 === 0) {
-        document.getElementById("ticket-final-price").innerHTML = (`Il prezzo del tuo biglietto ferroviario è ${ticketFinalPrice}€`);
+        document.getElementById("ticket-final-price").innerHTML = (`${ticketFinalPrice}€`);
     } else {
         let ticketRoundedPrice = ticketFinalPrice.toFixed(2)
         document.getElementById("ticket-final-price").innerHTML= ticketRoundedPrice;
@@ -58,6 +61,7 @@ submitBtn.addEventListener("click", function() {
     }
 
     // Clean
+    nameSurnameInput.value = "";
     kmToDoInput.value = "";
     userAgeInput.value = "";
 });
