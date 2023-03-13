@@ -68,4 +68,9 @@ submitBtn.addEventListener("click", function() {
 
 
 // output
+const carriage = Math.floor(Math.random() * 8) + 1;
+document.getElementById("carriage-name").innerHTML = carriage;
+
+const cpCode = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+document.getElementById("cp-code-name").innerHTML = cpCode;
 // prezzo con massimo due cifre decimali
